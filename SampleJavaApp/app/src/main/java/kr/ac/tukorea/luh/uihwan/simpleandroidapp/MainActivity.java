@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import org.w3c.dom.Text;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,19 +18,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Button btn = (Button)findViewById(R.id.pushMeButton);
-        btn.setOnClickListener(this);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tv = findViewById(R.id.nameTextView);
+                tv.setText("Push Me");
+            }
+        });
 
         Button btn2 = (Button)findViewById(R.id.anotherButton);
-        btn2.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        TextView tv = findViewById(R.id.nameTextView);
-        if (view.getId() == R.id.pushMeButton) {
-            tv.setText("Button pushed");
-        } else if (view.getId() == R.id.anotherButton) {
-            tv.setText("Another");
-        }
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tv = findViewById(R.id.nameTextView);
+                tv.setText("Another");
+            }
+        });
     }
 }
