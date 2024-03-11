@@ -3,12 +3,9 @@ package kr.ac.tukorea.luh.uihwan.simpleandroidapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,21 +15,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn = (Button)findViewById(R.id.pushMeButton);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TextView tv = findViewById(R.id.nameTextView);
-                tv.setText("Push Me");
-            }
-        });
+        btn.setOnClickListener(pushMeOnClickListener);
 
         Button btn2 = (Button)findViewById(R.id.anotherButton);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TextView tv = findViewById(R.id.nameTextView);
-                tv.setText("Another");
-            }
-        });
+        btn2.setOnClickListener(anotherOnClickListener);
     }
+
+    private View.OnClickListener pushMeOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            TextView tv = findViewById(R.id.nameTextView);
+            tv.setText("Push Me");
+        }
+    };
+
+    private View.OnClickListener anotherOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            TextView tv = findViewById(R.id.nameTextView);
+            tv.setText("Another");
+        }
+    };;
 }
