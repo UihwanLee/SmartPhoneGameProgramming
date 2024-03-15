@@ -4,30 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
     >
-    <Button
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Previous"
         />
-    <TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1 / 6"
         />
-    <Button
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
         />
     </LinearLayout>
     <ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    />
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/cat_5"
+        />
 </LinearLayout>
