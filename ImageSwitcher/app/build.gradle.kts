@@ -6,6 +6,10 @@ android {
     namespace = "kr.ac.tukorea.luh.uihwan.imageswitcher"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "kr.ac.tukorea.luh.uihwan.imageswitcher"
         minSdk = 24
