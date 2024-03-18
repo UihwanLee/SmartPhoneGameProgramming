@@ -12,16 +12,11 @@
         android:layout_height="match_parent"
         >
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/card_2c"
-            />
+            style="@style/cardButtonStyle" />
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/card_3d"
-            />
+            style="@style/cardButtonStyle" />
+        <ImageButton
+            style="@style/cardButtonStyle" />
     </LinearLayout>
-
 
 </LinearLayout>
