@@ -1,6 +1,7 @@
 package kr.ac.tukorea.luh.uihwan.cards;
 
 import androidx.appcompat.app.AppCompatActivity;
+import kr.ac.tukorea.luh.uihwan.cards.databinding.ActivityMainBinding;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton previousCardImageView;
+    private ImageButton previousCardImageButton;
 
     private int[] resIds = new int[] {
             R.mipmap.card_2c, R.mipmap.card_3d, R.mipmap.card_4h, R.mipmap.card_5s,
@@ -24,11 +25,14 @@ public class MainActivity extends AppCompatActivity {
             R.id.card_20, R.id.card_21, R.id.card_22, R.id.card_23,
             R.id.card_30, R.id.card_31, R.id.card_32, R.id.card_33,
     };
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        // setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         startGame();
     }
@@ -46,26 +50,34 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Tag", "Card clicked. ID=" + view.getId());
 
         ImageButton imageButton = (ImageButton)view;
-        if (imageButton == previousCardImageView) {
+        if (imageButton == previousCardImageButton) {
             return;
         }
 
         int imgRes = (Integer)imageButton.getTag();
-        if (previousCardImageView != null) {
-            int prevImgRes = (Integer)previousCardImageView.getTag();
+        if (previousCardImageButton != null) {
+            int prevImgRes = (Integer) previousCardImageButton.getTag();
             if(imgRes == prevImgRes) {
                 imageButton.setVisibility(View.INVISIBLE);
-                previousCardImageView.setVisibility(View.INVISIBLE);
-                previousCardImageView = null;
+                previousCardImageButton.setVisibility(View.INVISIBLE);
+                previousCardImageButton = null;
                 return;
             }
-            previousCardImageView.setImageResource(R.mipmap.card_blue_back);
+            previousCardImageButton.setImageResource(R.mipmap.card_blue_back);
         }
 
         imageButton.setImageResource(imgRes);
 
-        previousCardImageView = imageButton;
+        previousCardImageButton = imageButton;
 
+        addFlip();
+    }
+
+    int flips;
+    private void addFlip() {
+        flips += 1;
+//        String text = String.format("Flips: %d", flips);
+//        tv.setText(text);
     }
 
     public void onBtnRestart(View view) {
