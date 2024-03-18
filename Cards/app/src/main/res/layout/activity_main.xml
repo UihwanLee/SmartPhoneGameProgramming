@@ -31,16 +31,16 @@
         android:layout_weight="1"
         >
         <ImageButton
-            android:id="@+id/card_14"
+            android:id="@+id/card_10"
             style="@style/cardButtonStyle" />
         <ImageButton
-            android:id="@+id/card_15"
+            android:id="@+id/card_11"
             style="@style/cardButtonStyle" />
         <ImageButton
-            android:id="@+id/card_16"
+            android:id="@+id/card_12"
             style="@style/cardButtonStyle" />
         <ImageButton
-            android:id="@+id/card_17"
+            android:id="@+id/card_13"
             style="@style/cardButtonStyle" />
     </LinearLayout>
     <LinearLayout
@@ -79,5 +79,4 @@
             android:id="@+id/card_33"
             style="@style/cardButtonStyle" />
     </LinearLayout>
-
 </LinearLayout>
