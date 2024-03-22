@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton previousCardImageButton;
@@ -37,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
         startGame();
     }
 
+    Random random = new Random();
     private void startGame() {
+        for(int i=0; i< VIEW_IDS.length; i++) {
+            int swap = random.nextInt(VIEW_IDS.length);
+            int resId = resIds[i];
+            resIds[i] = resIds[swap];
+            resIds[swap] = resId;
+        }
         for (int i = 0; i < VIEW_IDS.length; i++) {
             ImageView iv = findViewById(VIEW_IDS[i]);
             iv.setVisibility(View.VISIBLE);
