@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             iv.setImageResource(R.mipmap.card_blue_back);
             iv.setTag(resIds[i]);
         }
+        setFlips(0);
     }
 
     public void onBtnCard(View view) {
