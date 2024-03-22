@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">카드놀이</string>
+    <string name="flips_fmt">뒤집은 카드수: %d</string>
+    <string name="restart_dialog_title">재시작</string>
+    <string name="restart_dialog_message">게임을 다시 시작하시겠습니까?</string>
+    <string name="restart_dialog_btn_restart">다시시작</string>
+    <string name="alert_btn_cancel">취소</string>
+    <string name="header_btn_restart">RST</string>
+</resources>
