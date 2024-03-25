@@ -6,6 +6,10 @@ android {
     namespace = "kr.ac.tukorea.luh.uihwan.morecontrols"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "kr.ac.tukorea.luh.uihwan.morecontrols"
         minSdk = 24
