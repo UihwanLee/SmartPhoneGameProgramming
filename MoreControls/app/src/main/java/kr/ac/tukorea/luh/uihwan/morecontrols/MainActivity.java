@@ -17,24 +17,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.nameEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+        binding.nameEditText.addTextChangedListener(nameEditTextWatcher);
     }
 
+    private final TextWatcher nameEditTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String name = binding.nameEditText.getText().toString().trim();
+            String text = getString(R.string.name_length_msg, name.length());
+            binding.pageTitleTextView.setText(text);
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
     public void onBtnDoIt(View view) {
         boolean isGood = binding.goodProgrammerCheckbox.isChecked();
         int strId = isGood ? R.string.you_get_one_grand : R.string.you_have_nothing;
