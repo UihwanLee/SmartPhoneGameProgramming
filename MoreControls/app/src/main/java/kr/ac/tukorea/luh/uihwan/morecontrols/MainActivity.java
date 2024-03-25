@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import kr.ac.tukorea.luh.uihwan.morecontrols.databinding.ActivityMainBinding;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,5 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+    }
+
+    public void onBtnDoIt(View view) {
+        binding.pageTitleTextView.setText("Something");
     }
 }
