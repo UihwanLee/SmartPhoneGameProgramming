@@ -12,4 +12,5 @@
     <string name="noname">NoName</string>
     <string name="name_length_msg">Your name is %d character long.</string>
     <string name="apply_immediately">Applies immediately</string>
+    <string name="you_get_money">Contrats. You get $%d</string>
 </resources>
